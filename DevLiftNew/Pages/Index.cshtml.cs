@@ -5,6 +5,7 @@ namespace DevLiftNew.Pages;
 
 public class IndexModel : PageModel
 {
+    public int CompletionRate { get; set; } = 75; 
     private readonly ILogger<IndexModel> _logger;
 
     public IndexModel(ILogger<IndexModel> logger)

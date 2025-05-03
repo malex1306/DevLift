@@ -19,7 +19,7 @@
 ## 🖥️ **3. Razor Pages**
 ### **Startseite (`Index.cshtml`)**
 - [x] Begrüßungstext + Quiz-Start-Button
-- [ ] Link zur Quiz-Seite (`/Quiz`)
+- [x] Link zur Quiz-Seite (`/Quiz`)
 
 ### **Quiz-Seite (`Quiz.cshtml`)**
 - [ ] Frage anzeigen (aus `QuizQuestion`)

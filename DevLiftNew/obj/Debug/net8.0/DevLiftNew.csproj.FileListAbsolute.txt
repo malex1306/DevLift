@@ -28,3 +28,4 @@
 /Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/obj/Debug/net8.0/DevLiftNew.pdb
 /Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/obj/Debug/net8.0/DevLiftNew.genruntimeconfig.cache
 /Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/obj/Debug/net8.0/ref/DevLiftNew.dll
+/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/obj/Debug/net8.0/DevLiftNew.sourcelink.json
