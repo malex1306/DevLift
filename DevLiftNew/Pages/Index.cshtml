@@ -22,7 +22,14 @@
                     <h5 class="card-title">Quiz: Netzwerke</h5>
                     <p class="card-text" align="center">Multiple Choice</p>
                     <div class="mt-auto text-center">
-                        <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                        }
+                        else
+                        {
+                            <a asp-page="/Account/Login" class="btn btn-dark">Login</a>
+                        }
                     </div>
                 </div>
             </div>
@@ -35,7 +42,14 @@
                     <h5 class="card-title">Quiz: Programmieren</h5>
                     <p class="card-text">C# & .NET</p>
                     <div class="mt-auto text-center">
-                        <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                        }
+                        else
+                        {
+                            <a asp-page="/Account/Login" class="btn btn-dark">Login</a>
+                        }
                     </div>
                 </div>
             </div>
@@ -48,7 +62,14 @@
                     <h5 class="card-title">Quiz: Datenbanken</h5>
                     <p class="card-text">SQL & Entity Framework</p>
                     <div class="mt-auto text-center">
-                        <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                        }
+                        else
+                        {
+                            <a asp-page="/Account/Login" class="btn btn-dark">Login</a>
+                        }
                     </div>
                 </div>
             </div>
@@ -61,7 +82,14 @@
                     <h5 class="card-title">Quiz: BWL</h5>
                     <p class="card-text">Alles zu BWL</p>
                     <div class="mt-auto text-center">
-                        <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                        }
+                        else
+                        {
+                            <a asp-page="/Account/Login" class="btn btn-dark">Login</a>
+                        }
                     </div>
                 </div>
             </div>
@@ -77,8 +105,24 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Dein Fortschritt</h5>
                     <canvas id="doughnutChart" width="200" height="200"></canvas>
-                    <p class="mt-2 text-muted">75% aller Quizzes abgeschlossen</p>
-                    <a asp-page="/Dashboard" class="btn btn-dark mt-2">Dashboard öffnen</a>
+                    <p class="mt-2 text-muted">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <span>75% aller Quizzes abgeschlossen</span>
+                        }
+                        else
+                        {
+                            <span>Bitte logge dich ein, um deinen Fortschritt zu sehen</span>
+                        }
+                    </p>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-page="/Dashboard" class="btn btn-dark mt-2">Dashboard öffnen</a>
+                    }
+                    else
+                    {
+                        <a asp-page="/Account/Login" class="btn btn-dark mt-2">Login</a>
+                    }
                 </div>
             </div>
         </div>
@@ -88,8 +132,15 @@
                     <h5 class="card-title">Dein Profil</h5>
                     <p class="mt-2 text-muted">Schau dir dein Profil an</p>
                     <div class="mt-auto text-center">
-                        <a asp-page="/Dashboard" class="btn btn-dark mt-2">Zu deinem Profil</a>
-                        </div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-page="/Dashboard" class="btn btn-dark mt-2">Zu deinem Profil</a>
+                        }
+                        else
+                        {
+                            <a asp-page="/Account/Login" class="btn btn-dark">Login</a>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
