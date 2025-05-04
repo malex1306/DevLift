@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/obj/Debug/net8.0/scopedcss/projectbundle/DevLiftNew.bundle.scp.css",
-      "PackagePath": "staticwebassets/DevLiftNew.bundle.scp.css"
+      "PackagePath": "staticwebassets/DevLiftNew.4t2cyno6tt.bundle.scp.css"
     },
     {
       "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/css/site.css",
@@ -11,6 +11,10 @@
     {
       "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/images/logo.png",
+      "PackagePath": "staticwebassets/images/logo.png"
     },
     {
       "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/js/site.js",
@@ -243,6 +247,10 @@
     {
       "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.DevLiftNew.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.DevLiftNew.Microsoft.AspNetCore.StaticWebAssets.props",

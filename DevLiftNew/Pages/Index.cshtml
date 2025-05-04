@@ -5,7 +5,11 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to DevLift</h1>
+    
+    <h1 class="display-4">
+        <img src="~/images/logo.png" alt="logo" class="img-fluid"/>
+        @Model.WelcomeMessage
+    </h1>
 </div>
 
 
@@ -54,8 +58,8 @@
         <div class="col-md-3 mb-4">
             <div class="card shadow-sm h-100">
                 <div class="card-body d-flex flex-column text-center">
-                    <h5 class="card-title">Quiz: Sicherheit</h5>
-                    <p class="card-text">Cybersecurity Basics</p>
+                    <h5 class="card-title">Quiz: BWL</h5>
+                    <p class="card-text">Alles zu BWL</p>
                     <div class="mt-auto text-center">
                         <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
                     </div>

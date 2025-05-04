@@ -17,9 +17,15 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
 [/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Account/Register.cshtml]

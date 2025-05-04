@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: #e3f2fd; 
+  background: linear-gradient(0deg,rgba(34, 123, 195, 1) 0%, rgba(34, 58, 195, 1) 19%, rgba(39, 34, 195, 1) 37%, rgba(77, 34, 195, 1) 62%, rgba(101, 34, 195, 1) 100%);
 }
 .btn{
 background-color: rgba(0, 0, 0, 0.8);
@@ -54,6 +54,10 @@ background-color: rgba(0, 0, 0, 0.8);
 #doughnutChart {
   max-width: 200px;
   margin: 0 auto;
+}
+.img-fluid{
+  height: 150px;
+  width: auto;
 }
 /* Sidebar Styles */
 .sidebar {
