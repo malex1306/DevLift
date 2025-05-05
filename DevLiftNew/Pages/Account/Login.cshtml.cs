@@ -42,10 +42,10 @@ public class LoginModel : PageModel
             var result = await _signInManager.CheckPasswordSignInAsync(user, Input.Password, false);
             if (result.Succeeded)
             {
-                // Vorhandene Session löschen (optional aber empfohlen)
+                
                 await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
 
-                // Claims erstellen (inkl. Vorname)
+               
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.UserName ?? ""),

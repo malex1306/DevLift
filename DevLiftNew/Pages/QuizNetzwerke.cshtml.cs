@@ -7,16 +7,16 @@ using Microsoft.Extensions.Logging;
 
 namespace DevLiftNew.Pages
 {
-    public class IndexModel : PageModel
+    public class QuizNetwerke : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<QuizNetwerke> _logger;
         private readonly UserManager<AppUser> _userManager;
         
         public int CompletionRate { get; set; } = 75;
         public string WelcomeMessage { get; private set; }
 
-        public IndexModel(
-            ILogger<IndexModel> logger,
+        public QuizNetwerke(
+            ILogger<QuizNetwerke> logger,
             UserManager<AppUser> userManager)
         {
             _logger = logger;
