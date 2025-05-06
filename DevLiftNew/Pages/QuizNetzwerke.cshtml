@@ -5,6 +5,41 @@
 }
 <div class="text-center">
     <h1 class="display-4">Quiz Netzwerke, @Model.WelcomeMessage</h1>
-    
 </div>
+
+<div class="container mt-5">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Frage 1: Was ist ein Netzwerk?</h5>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="frage1" id="option1" value="option1">
+                            <label class="form-check-label" for="option1">
+                                Eine Gruppe von Computern, die miteinander verbunden sind.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="frage1" id="option2" value="option2">
+                            <label class="form-check-label" for="option2">
+                                Ein einzelner Computer ohne Verbindung zu anderen.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="frage1" id="option3" value="option3">
+                            <label class="form-check-label" for="option3">
+                                Nur das Internet.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mt-3">Antwort senden</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
 

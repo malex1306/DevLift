@@ -1,6 +1,6 @@
 namespace DevLiftNew.Models;
 
-public class QuizQuestion
+public class QuizQuestion 
 {
     
 }

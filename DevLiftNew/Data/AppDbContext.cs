@@ -8,13 +8,17 @@ namespace DevLiftNew.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options) { }
+        
 
         protected override void OnModelCreating(ModelBuilder builder)
         { 
             base.OnModelCreating(builder);
-            
-            // Zusätzliche Konfigurationen hier
-            // z.B. für benutzerdefinierte Tabellen
+        
+            // Neue Zeile: Beziehung konfigurieren
+            builder.Entity<Flashcard>()
+                .HasOne(f => f.CreatedBy)
+                .WithMany()
+                .HasForeignKey(f => f.CreatedById);
         }
     }
 }
