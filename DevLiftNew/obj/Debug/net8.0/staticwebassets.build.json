@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XeEeFARI0LtdLwoLTVbNpjw9YNJ2baA+UcuUMNwvbBQ=",
+  "Hash": "QMLe6/9+K3jAHkqSrVn/DrXd6Tpaxqli95uYMeahpww=",
   "Source": "DevLiftNew",
   "BasePath": "_content/DevLiftNew",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5ytsnqsgvi",
-      "Integrity": "Y5ooMV7SBBObMCQocRsaZuMPV8wWlgAT8P3PFr9NQb8=",
+      "Fingerprint": "z5u4b6e0x3",
+      "Integrity": "txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -1342,51 +1342,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.5ytsnqsgvi.css",
-      "AssetFile": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/css/site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1724"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Y5ooMV7SBBObMCQocRsaZuMPV8wWlgAT8P3PFr9NQb8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 04 May 2025 07:49:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "5ytsnqsgvi"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Y5ooMV7SBBObMCQocRsaZuMPV8wWlgAT8P3PFr9NQb8="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/css/site.css",
       "Selectors": [],
@@ -1397,7 +1352,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1724"
+          "Value": "3622"
         },
         {
           "Name": "Content-Type",
@@ -1405,11 +1360,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Y5ooMV7SBBObMCQocRsaZuMPV8wWlgAT8P3PFr9NQb8=\""
+          "Value": "\"txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 04 May 2025 07:49:01 GMT"
+          "Value": "Wed, 07 May 2025 18:06:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1419,7 +1374,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Y5ooMV7SBBObMCQocRsaZuMPV8wWlgAT8P3PFr9NQb8="
+          "Value": "sha256-txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.z5u4b6e0x3.css",
+      "AssetFile": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3622"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 18:06:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z5u4b6e0x3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio="
         }
       ]
     },

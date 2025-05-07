@@ -1,29 +1,29 @@
-// Models/Flashcard.cs
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DevLiftNew.Models;
-
-public class Flashcard
+namespace DevLiftNew.Models
 {
-    public int Id { get; set; }
+    public class Flashcard
+    {
+        public int Id { get; set; }
 
-    [Required(ErrorMessage = "Frage ist erforderlich!")]
-    [Display(Name = "Frage")]
-    public string Front { get; set; }
+        [Required]
+        public string Front { get; set; }
 
-    [Required(ErrorMessage = "Antwort ist erforderlich!")]
-    [Display(Name = "Antwort")]
-    public string Back { get; set; }
+        [Required]
+        public string Back { get; set; }
 
-    [Required]
-    public string Category { get; set; } // "Netzwerke", "BWL", "Pseudocode"
+        [Required]
+        public string Category { get; set; }
 
-    // Verknüpfung zum AppUser
-    [ForeignKey("CreatedBy")]
-    public string CreatedById { get; set; }
-    public AppUser CreatedBy { get; set; }
-
-    [DataType(DataType.DateTime)]
-    public DateTime LastReviewed { get; set; } = DateTime.Now;
+        // Foreign Key zu AppUser (Der Benutzer, der die Karteikarte erstellt hat)
+        [ForeignKey("CreatedBy")]
+        public string CreatedById { get; set; }
+        
+        // Navigationseigenschaft, die den Benutzer referenziert, der die Karteikarte erstellt hat
+        public AppUser CreatedBy { get; set; }
+        
+        [DataType(DataType.DateTime)]
+        public DateTime LastReviewed { get; set; } = DateTime.Now;
+    }
 }

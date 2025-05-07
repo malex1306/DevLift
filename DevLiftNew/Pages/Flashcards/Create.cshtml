@@ -1,0 +1,36 @@
+@page
+@model DevLiftNew.Pages.Flashcards.CreateModel
+
+<h2 class="mb-4">Neue Karteikarte erstellen</h2>
+
+<form method="post" class="card shadow p-4">
+    <validation-summary asp-validation-summary="All" class="alert alert-danger"></validation-summary>
+
+    <!-- Front Input -->
+    <div class="mb-3">
+        <label asp-for="Flashcard.Front" class="form-label fw-bold">Frage</label>
+        <textarea asp-for="Flashcard.Front" class="form-control" rows="3" placeholder="Gib hier die Frage ein..."></textarea>
+        <span asp-validation-for="Flashcard.Front" class="text-danger small"></span>
+    </div>
+
+    <!-- Back Input -->
+    <div class="mb-3">
+        <label asp-for="Flashcard.Back" class="form-label fw-bold">Antwort</label>
+        <textarea asp-for="Flashcard.Back" class="form-control" rows="3" placeholder="Gib hier die Antwort ein..."></textarea>
+        <span asp-validation-for="Flashcard.Back" class="text-danger small"></span>
+    </div>
+
+    <!-- Category Selection -->
+    <div class="mb-4">
+        <label asp-for="Flashcard.Category" class="form-label fw-bold">Kategorie</label>
+        <select asp-for="Flashcard.Category" class="form-select">
+            <option value="" disabled selected>-- Bitte Kategorie wählen --</option>
+            <option value="Netzwerke">Netzwerke</option>
+            <option value="BWL">BWL</option>
+            <option value="Pseudocode">Pseudocode</option>
+        </select>
+        <span asp-validation-for="Flashcard.Category" class="text-danger small"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">💾 Karte speichern</button>
+</form>

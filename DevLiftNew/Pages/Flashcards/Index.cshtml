@@ -1,0 +1,48 @@
+@page
+@model DevLiftNew.Pages.Flashcards.IndexModel
+
+<h2 class="flashcardHeader">Meine Karteikarten</h2>
+
+<a asp-page="Create" class="btnFlashcard btn-primary mb-3">Neue Karte erstellen</a>
+
+<div class="category-container">
+    @foreach (var category in Model.Categories)
+    {
+        <div class="category-box" onclick="toggleCategory('@category.Name')">
+            <div class="category-header">
+                <h3>@category.Name</h3>
+            </div>
+            <div id="@category.Name" class="flashcard-grid" style="display: none;">
+                @foreach (var card in category.Flashcards)
+                {
+                    <div class="flashcard">
+                        <small class="text-muted, small">@card.Category | Zuletzt gelernt: @card.LastReviewed.ToShortDateString()</small>
+                        <div class="card-inner">
+                            <div class="front">@card.Front
+                                <form method="post" asp-page-handler="Delete" asp-route-id="@card.Id" onsubmit="return confirm('Karte wirklich löschen?');">
+                                    <button type="submit" class="delete-btn">🗑️ Löschen</button>
+                                </form>
+                            </div>
+                            <div class="back">@card.Back</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    function toggleCategory(categoryName) {
+        const categoryGrid = document.getElementById(categoryName);
+        if (categoryGrid.style.display === "none") {
+            categoryGrid.style.display = "grid";
+        } else {
+            categoryGrid.style.display = "none";
+        }
+    }
+
+    function toggleCard(element) {
+        element.classList.toggle('flipped');
+    }
+</script>

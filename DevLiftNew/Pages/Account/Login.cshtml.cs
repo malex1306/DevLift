@@ -39,28 +39,14 @@ public class LoginModel : PageModel
         var user = await _userManager.FindByEmailAsync(Input.Email);
         if (user != null)
         {
-            var result = await _signInManager.CheckPasswordSignInAsync(user, Input.Password, false);
+            var result = await _signInManager.PasswordSignInAsync(user, Input.Password, isPersistent: false, lockoutOnFailure: false);
             if (result.Succeeded)
             {
-                
-                await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
-
-               
-                var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, user.UserName ?? ""),
-                    new Claim("given_name", user.FirstName ?? ""),
-                    new Claim("family_name", user.LastName ?? "")
-                };
-
-                var identity = new ClaimsIdentity(claims, IdentityConstants.ApplicationScheme);
-                var principal = new ClaimsPrincipal(identity);
-
-                await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, principal);
-
                 return RedirectToPage("/Index");
             }
+
         }
+    
 
         ModelState.AddModelError(string.Empty, "Ungültige Anmeldedaten");
         return Page();

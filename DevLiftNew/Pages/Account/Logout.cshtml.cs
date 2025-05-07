@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using DevLiftNew.Models;
@@ -16,11 +15,10 @@ namespace DevLiftNew.Pages.Account
             _signInManager = signInManager;
         }
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
             await _signInManager.SignOutAsync();
-            // Optional: Clear all session/cookie data if needed
-            await HttpContext.SignOutAsync();
+            return RedirectToPage("/Index");
         }
     }
 }
