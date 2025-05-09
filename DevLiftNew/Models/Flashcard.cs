@@ -16,11 +16,11 @@ namespace DevLiftNew.Models
         [Required]
         public string Category { get; set; }
 
-        // Foreign Key zu AppUser (Der Benutzer, der die Karteikarte erstellt hat)
+        
         [ForeignKey("CreatedBy")]
         public string CreatedById { get; set; }
         
-        // Navigationseigenschaft, die den Benutzer referenziert, der die Karteikarte erstellt hat
+        
         public AppUser CreatedBy { get; set; }
         
         [DataType(DataType.DateTime)]

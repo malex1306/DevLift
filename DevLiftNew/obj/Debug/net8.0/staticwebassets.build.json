@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QMLe6/9+K3jAHkqSrVn/DrXd6Tpaxqli95uYMeahpww=",
+  "Hash": "WBqpQn/FbDC7ZmOtX5fUtGeFPPYrrieFo50VO3UOxfM=",
   "Source": "DevLiftNew",
   "BasePath": "_content/DevLiftNew",
   "Mode": "Default",
@@ -73,11 +73,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "z5u4b6e0x3",
-      "Integrity": "txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio=",
+      "Fingerprint": "rcb95q89x3",
+      "Integrity": "RdEe7xbzSyuOIHX6WY3xmtREPTz0juNldnaQ0NZ1OGw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/data/quizfragen.json",
+      "SourceId": "DevLiftNew",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/",
+      "BasePath": "_content/DevLiftNew",
+      "RelativePath": "data/quizfragen#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fuihauwyxj",
+      "Integrity": "WYTwBJl6moL8GJ53y60pFlr21tdiPj60a0eIwkS4XSY=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/data/quizfragen.json"
     },
     {
       "Identity": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/favicon.ico",
@@ -1352,7 +1373,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3622"
+          "Value": "4334"
         },
         {
           "Name": "Content-Type",
@@ -1360,11 +1381,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio=\""
+          "Value": "\"RdEe7xbzSyuOIHX6WY3xmtREPTz0juNldnaQ0NZ1OGw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 18:06:46 GMT"
+          "Value": "Wed, 07 May 2025 18:29:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1374,12 +1395,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio="
+          "Value": "sha256-RdEe7xbzSyuOIHX6WY3xmtREPTz0juNldnaQ0NZ1OGw="
         }
       ]
     },
     {
-      "Route": "css/site.z5u4b6e0x3.css",
+      "Route": "css/site.rcb95q89x3.css",
       "AssetFile": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/css/site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1389,7 +1410,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3622"
+          "Value": "4334"
         },
         {
           "Name": "Content-Type",
@@ -1397,11 +1418,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio=\""
+          "Value": "\"RdEe7xbzSyuOIHX6WY3xmtREPTz0juNldnaQ0NZ1OGw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 18:06:46 GMT"
+          "Value": "Wed, 07 May 2025 18:29:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1411,7 +1432,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "z5u4b6e0x3"
+          "Value": "rcb95q89x3"
         },
         {
           "Name": "label",
@@ -1419,7 +1440,89 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-txR9OnOTqmljOLGT/BByNDTAdhg7ptoF2f5sJiAxZio="
+          "Value": "sha256-RdEe7xbzSyuOIHX6WY3xmtREPTz0juNldnaQ0NZ1OGw="
+        }
+      ]
+    },
+    {
+      "Route": "data/quizfragen.fuihauwyxj.json",
+      "AssetFile": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/data/quizfragen.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11631"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WYTwBJl6moL8GJ53y60pFlr21tdiPj60a0eIwkS4XSY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 09 May 2025 19:44:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fuihauwyxj"
+        },
+        {
+          "Name": "label",
+          "Value": "data/quizfragen.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WYTwBJl6moL8GJ53y60pFlr21tdiPj60a0eIwkS4XSY="
+        }
+      ]
+    },
+    {
+      "Route": "data/quizfragen.json",
+      "AssetFile": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/data/quizfragen.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11631"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WYTwBJl6moL8GJ53y60pFlr21tdiPj60a0eIwkS4XSY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 09 May 2025 19:44:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WYTwBJl6moL8GJ53y60pFlr21tdiPj60a0eIwkS4XSY="
         }
       ]
     },

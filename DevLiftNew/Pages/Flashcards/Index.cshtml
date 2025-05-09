@@ -8,14 +8,14 @@
 <div class="category-container">
     @foreach (var category in Model.Categories)
     {
-        <div class="category-box" onclick="toggleCategory('@category.Name')">
-            <div class="category-header">
+        <div class="category-box">
+            <div class="category-header" onclick="toggleCategory('@category.Name')">
                 <h3>@category.Name</h3>
             </div>
             <div id="@category.Name" class="flashcard-grid" style="display: none;">
                 @foreach (var card in category.Flashcards)
                 {
-                    <div class="flashcard">
+                    <div class="flashcard"  onclick="toggleCard(this)">
                         <small class="text-muted, small">@card.Category | Zuletzt gelernt: @card.LastReviewed.ToShortDateString()</small>
                         <div class="card-inner">
                             <div class="front">@card.Front

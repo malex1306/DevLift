@@ -1,0 +1,17 @@
+@page
+@model DevLiftNew.Pages.ImportModel
+
+<h1>Import Quizfragen</h1>
+
+@if (!string.IsNullOrEmpty(Model.ImportMessage))
+{
+    <div class="alert alert-info">
+        @Model.ImportMessage
+    </div>
+}
+
+<p>Drücke den Button, um die Quizfragen zu importieren:</p>
+
+<form method="get">
+    <button type="submit" class="btn btn-primary">Import starten</button>
+</form>

@@ -3,6 +3,7 @@ using System;
 using DevLiftNew.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DevLiftNew.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250507195448_AddQuizTables")]
+    partial class AddQuizTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
@@ -140,9 +143,14 @@ namespace DevLiftNew.Migrations
                     b.Property<int>("QuizQuestionId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("QuizQuestionId1")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.HasIndex("QuizQuestionId");
+
+                    b.HasIndex("QuizQuestionId1");
 
                     b.ToTable("QuizAnswers");
                 });
@@ -313,6 +321,10 @@ namespace DevLiftNew.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("DevLiftNew.Models.QuizQuestion", null)
+                        .WithMany("Antworten")
+                        .HasForeignKey("QuizQuestionId1");
+
                     b.Navigation("QuizQuestion");
                 });
 
@@ -370,6 +382,8 @@ namespace DevLiftNew.Migrations
             modelBuilder.Entity("DevLiftNew.Models.QuizQuestion", b =>
                 {
                     b.Navigation("Answers");
+
+                    b.Navigation("Antworten");
                 });
 #pragma warning restore 612, 618
         }

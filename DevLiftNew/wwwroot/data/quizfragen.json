@@ -1,0 +1,524 @@
+[
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was beschreibt das OSI-Modell?",
+    "Answers": [
+      {
+        "antwortText": "Ein Referenzmodell für Netzwerkprotokolle",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Ein Betriebssystem",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Ein Sicherheitsstandard",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Ein Protokolltyp",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Ein Webdienst",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Welche Schicht im OSI-Modell ist für Routing zuständig?",
+    "Answers": [
+      {
+        "antwortText": "Netzwerkschicht",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Transportschicht",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Bitübertragungsschicht",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Sitzungsschicht",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Anwendungsschicht",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Welche Aufgabe hat TCP im TCP/IP-Modell?",
+    "Answers": [
+      {
+        "antwortText": "Zuverlässige Datenübertragung",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Verschlüsselung",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Routing",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Namensauflösung",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Zuweisung von MAC-Adressen",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was ist der Hauptunterschied zwischen TCP und UDP?",
+    "Answers": [
+      {
+        "antwortText": "TCP ist verbindungsorientiert, UDP nicht",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "TCP ist schneller",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "UDP nutzt Ports, TCP nicht",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "TCP ist für DNS",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "UDP verwendet IP-Adressen nicht",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Welche IP-Adresse ist privat?",
+    "answers": [
+      {
+        "antwortText": "192.168.1.1",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "8.8.8.8",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "1.1.1.1",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "143.0.0.1",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "203.0.113.1",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was bedeutet Subnetting?",
+    "Answers": [
+      {
+        "antwortText": "Aufteilen eines Netzwerks in kleinere logische Netzwerke",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Verschlüsseln von Daten",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Verbinden von zwei Netzwerken",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Installieren von Routern",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Sichern des Netzwerks",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Welche Funktion hat ein Switch?",
+    "Answers": [
+      {
+        "antwortText": "Weiterleitung von Daten basierend auf MAC-Adressen",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Vergabe von IP-Adressen",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Verbindung zum Internet",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Zuweisung von Ports",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Umwandlung von Signalen",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Welche Aufgabe hat ein Hub?",
+    "Answers": [
+      {
+        "antwortText": "Verteilt Daten an alle Ports",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Filtert Datenpakete",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Speichert IP-Adressen",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Verschlüsselt Netzwerkverkehr",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Führt DNS-Anfragen durch",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was macht eine Firewall?",
+    "Answers": [
+      {
+        "antwortText": "Filtert den Netzwerkverkehr basierend auf Regeln",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Verteilt IP-Adressen",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Sendet Datenpakete",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Verschlüsselt Passwörter",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Misst die Bandbreite",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Wofür steht VPN?",
+    "Answers": [
+      {
+        "antwortText": "Virtual Private Network",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Very Personal Network",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Verified Public Network",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Virtual Port Node",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Visible Private Net",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was ist ein Vorteil von VPN?",
+    "Answers": [
+      {
+        "antwortText": "Verschlüsselte Verbindung über das Internet",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Schnellerer Internetzugang",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Weniger Bandbreite",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Automatische Updates",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Mehr Werbung",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was ist ein Nachteil von WLAN gegenüber LAN?",
+    "Answers": [
+      {
+        "antwortText": "Weniger stabile Verbindung",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Höhere Sicherheit",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Schnellere Datenrate",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Mehr Kabel notwendig",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Begrenzter Frequenzbereich",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Wofür steht DNS?",
+    "Answers": [
+      {
+        "antwortText": "Domain Name System",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Digital Network Service",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Dynamic Node Service",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Data Naming Server",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Direct Network Station",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was macht ein DNS-Server?",
+    "Answers": [
+      {
+        "antwortText": "Wandelt Domainnamen in IP-Adressen um",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Erstellt Subnetze",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Zuteilung von MAC-Adressen",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Überwacht Netzwerkverkehr",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Installiert Netzwerkgeräte",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Wofür steht DHCP?",
+    "Answers": [
+      {
+        "antwortText": "Dynamic Host Configuration Protocol",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Data Handling Control Protocol",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Digital Host Communication Protocol",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Domain Host Connect Protocol",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Dynamic Hypertext Configuration Protocol",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was macht ein DHCP-Server?",
+    "Answers": [
+      {
+        "antwortText": "Vergibt automatisch IP-Adressen",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Speichert Passwörter",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Sendet E-Mails",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Verbindet Router",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Wandelt MAC-Adressen um",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was macht der Befehl ping?",
+    "Answers": [
+      {
+        "antwortText": "Testet die Erreichbarkeit eines Hosts",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Löscht Dateien",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Öffnet Ports",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Wechselt Netzwerke",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Startet Dienste",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was macht Traceroute?",
+    "Answers": [
+      {
+        "antwortText": "Zeigt den Weg von Paketen zum Ziel",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "Sendet Daten anonym",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Misst Signalstärke",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Verschlüsselt Verbindungen",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Zählt Netzwerkgeräte",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Was ist Port 80?",
+    "Answers": [
+      {
+        "antwortText": "Standardport für HTTP",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "VPN-Port",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "FTP-Port",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "SMTP-Port",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "SSH-Port",
+        "istKorrekt": false
+      }
+    ]
+  },
+  {
+    "kategorie": "Netzwerke",
+    "frageText": "Wofür steht NAT?",
+    "Answers": [
+      {
+        "antwortText": "Network Address Translation",
+        "istKorrekt": true
+      },
+      {
+        "antwortText": "New Access Technology",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Node Addressing Tool",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Network Advanced Transport",
+        "istKorrekt": false
+      },
+      {
+        "antwortText": "Net API Table",
+        "istKorrekt": false
+      }
+    ]
+  }
+]
+
+

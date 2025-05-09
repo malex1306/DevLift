@@ -12,21 +12,21 @@ namespace DevLiftNew.Pages.Flashcards
     public class CreateModel : PageModel
     {
         private readonly AppDbContext _context;
-        private readonly UserManager<AppUser> _userManager;  // UserManager hinzufügen
+        private readonly UserManager<AppUser> _userManager;  
 
         [BindProperty] public Flashcard Flashcard { get; set; }
 
-        public CreateModel(AppDbContext context, UserManager<AppUser> userManager)  // Konstruktor anpassen
+        public CreateModel(AppDbContext context, UserManager<AppUser> userManager)  
         {
             _context = context;
-            _userManager = userManager;  // UserManager zuweisen
+            _userManager = userManager;  
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
             Console.WriteLine($"Angemeldet? {User.Identity?.IsAuthenticated}");
     
-            // Alle Claims des Benutzers ausgeben
+            
             foreach (var claim in User.Claims)
             {
                 Console.WriteLine($"Claim: {claim.Type} = {claim.Value}");
@@ -34,7 +34,7 @@ namespace DevLiftNew.Pages.Flashcards
 
             Console.WriteLine("OnPostAsync wurde aufgerufen");
 
-            // Benutzer-ID explizit aus den Claims abfragen
+           
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
             if (string.IsNullOrEmpty(userId))

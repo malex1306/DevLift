@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
+      "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/data/quizfragen.json",
+      "PackagePath": "staticwebassets/data/quizfragen.json"
+    },
+    {
       "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },

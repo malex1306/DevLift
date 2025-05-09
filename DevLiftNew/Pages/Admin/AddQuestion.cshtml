@@ -1,0 +1,34 @@
+@page
+@model AddQuestionModel
+@{
+    ViewData["Title"] = "Neue Quizfrage";
+}
+
+<h2>Neue Quizfrage erstellen</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label>Kategorie</label>
+        <input asp-for="Frage.Kategorie" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Fragetext</label>
+        <input asp-for="Frage.FrageText" class="form-control" />
+    </div>
+
+    <h4>Antworten</h4>
+
+    @for (int i = 0; i < Model.Antworten.Count; i++)
+    {
+        <div class="form-group">
+            <input asp-for="Antworten[i].AntwortText" class="form-control" placeholder="Antworttext" />
+            <label>
+                <input asp-for="Antworten[i].IstKorrekt" />
+                Korrekt?
+            </label>
+        </div>
+    }
+
+    <button type="submit" class="btn btn-dark mt-3">Speichern</button>
+</form>
