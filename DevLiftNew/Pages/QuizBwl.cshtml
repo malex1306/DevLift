@@ -1,0 +1,138 @@
+@page
+@model DevLiftNew.Pages.QuizBwlModel
+@{
+    ViewData["Title"] = "Quiz Bwl";
+}
+<div class="text-center">
+    <h1 class="display-4">Quiz Bwl @Model.WelcomeMessage</h1>
+</div>
+
+<div class="container mt-5">
+    @for (int q = 0; q < Model.FragenBwl.Count; q++)
+    {
+        var frage = Model.FragenBwl[q];
+        <div class="row frage-slide @(q == 0 ? "" : "d-none")" id="frage-slide-@q">
+            <div class="col-md-12 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">@frage.BwlFrageText</h5>
+
+                        @for (int i = 0; i < frage.BwlAnswers.Count; i++)
+                        {
+                            var antwort = frage.BwlAnswers[i];
+                            var inputId = $"frage{frage.Id}_antwort{i}";
+                            <div class="form-check">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="frage@frage.Id"
+                                       id="@inputId"
+                                       value="@(antwort.BwlIstKorrekt ? "richtig" : "falsch")"
+                                       onclick="checkAnswer(this, @q)">
+                                <label class="form-check-label" for="@inputId">
+                                    @antwort.BwlAntwortText
+                                </label>
+                            </div>
+                        }
+
+                        <div id="feedback@frage.Id" class="mt-3 fw-bold"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- Quiz Ende Übersicht -->
+    <div class="row d-none" id="quiz-end">
+        <div class="col-md-12 text-center mt-5">
+            <h3>🎉 Du hast das Quiz abgeschlossen!</h3>
+            <p><strong id="result-correct"></strong> richtig beantwortet</p>
+            <p><strong id="result-wrong"></strong> falsch beantwortet</p>
+            <p><strong id="result-percentage"></strong>% richtig</p>
+            <button class="btn btn-secondary mt-3" onclick="location.reload()">Erneut spielen</button>
+        </div>
+    </div>
+
+    <!-- Formular zum Hinzufügen neuer Fragen -->
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">Neue Frage hinzufügen</h4>
+                    <form method="post" asp-page-handler="AddQuestion">
+                        <div class="form-group mb-3">
+                            <label for="frageText">Frage</label>
+                            <input type="text" class="form-control" id="frageText" name="bwlFrageText" required />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="antworten">Antworten (trenne sie mit Kommas, die erste ist korrekt)</label>
+                            <input type="text" class="form-control" id="antworten" name="bwlAntworten" required />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="kategorie">Kategorie</label>
+                            <select class="form-control" id="kategorie" name="bwlKategorie" required>
+                                <option value="Netzwerke">Netzwerke</option>
+                                <option value="Programmieren">Programmieren</option>
+                                <option value="Datenbanken">Datenbanken</option>
+                                <option value="Bwl">Bwl</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Frage hinzufügen</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let correctCount = 0;
+        let wrongCount = 0;
+        let answeredQuestions = new Set();
+
+        function checkAnswer(element, index) {
+            const frageId = element.name.replace("frage", "");
+            const feedback = document.getElementById("feedback" + frageId);
+
+            if (answeredQuestions.has(index)) return;
+            answeredQuestions.add(index);
+
+            if (element.value === 'richtig') {
+                feedback.innerHTML = "✅ Richtig!";
+                feedback.style.color = "green";
+                correctCount++;
+            } else {
+                feedback.innerHTML = "❌ Leider falsch.";
+                feedback.style.color = "red";
+                wrongCount++;
+            }
+
+            // Nächste Frage nach 1 Sekunde anzeigen
+            setTimeout(() => {
+                const currentSlide = document.getElementById("frage-slide-" + index);
+                const nextSlide = document.getElementById("frage-slide-" + (index + 1));
+
+                if (currentSlide) {
+                    currentSlide.classList.add("d-none");
+                }
+
+                if (nextSlide) {
+                    nextSlide.classList.remove("d-none");
+                } else {
+                    // Quiz fertig
+                    const total = correctCount + wrongCount;
+                    const percentage = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+                    document.getElementById("result-correct").innerText = correctCount;
+                    document.getElementById("result-wrong").innerText = wrongCount;
+                    document.getElementById("result-percentage").innerText = percentage;
+
+                    document.getElementById("quiz-end").classList.remove("d-none");
+                }
+            }, 1000);
+        }
+    </script>
+}

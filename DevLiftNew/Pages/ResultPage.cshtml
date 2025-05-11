@@ -1,0 +1,26 @@
+@page
+@model DevLiftNew.Pages.ResultPageModel
+
+@{
+    ViewData["Title"] = "Ergebnisse";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dein Ergebnis</h1>
+
+    <p>Du hast <strong>@Model.CorrectCount</strong> von <strong>@Model.TotalQuestions</strong> richtig beantwortet.</p>
+    <p>Das entspricht <strong>@Model.Percentage</strong>%.</p>
+
+    <h3>Beantwortete Fragen:</h3>
+    <ul>
+        @foreach (var frage in Model.BeantworteteFragen)
+        {
+            <li>
+                Frage: @frage.QuizQuestionBwl.BwlFrageText <br />
+                Deine Antwort: @(frage.IsCorrect ? "Richtig" : "Falsch")
+            </li>
+        }
+    </ul>
+
+    <a href="/QuizBwl" class="btn btn-primary">Nochmal spielen</a>
+</div>

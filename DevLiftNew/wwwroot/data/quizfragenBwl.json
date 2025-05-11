@@ -1,0 +1,192 @@
+[
+  {
+    "bwlFrageText": "Was ist das Ziel der doppelten Buchführung?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Ermittlung von Vermögen und Gewinn", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Erstellung von Rechnungen", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Lohnabrechnung", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Kontrolle von Lieferscheinen", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Welche Gesellschaftsform haftet mit dem Privatvermögen?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Einzelunternehmen", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "GmbH", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "AG", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "UG (haftungsbeschränkt)", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was versteht man unter dem Begriff Liquidität?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Fähigkeit, Zahlungsverpflichtungen nachzukommen", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Gewinnmaximierung", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Steuervermeidung", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Kundenzufriedenheit", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was ist ein Skonto?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Preisnachlass bei schneller Zahlung", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Zuschlag auf den Verkaufspreis", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Rabatt für Großkunden", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Strafzahlung für Zahlungsverzug", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was ist der Unterschied zwischen Aufwand und Kosten?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Aufwand ist periodenfremd, Kosten sind betriebsbedingt", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Kosten beinhalten immer Steuern", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Es gibt keinen Unterschied", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Kosten sind nur in AGs relevant", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was bedeutet der Begriff 'Inventar'?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Verzeichnis aller Vermögenswerte und Schulden", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Liste der Lagerartikel", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Personalverzeichnis", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Kundenkartei", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Welches Konto wird beim Verkauf von Waren auf Ziel angesprochen?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Forderungen aus Lieferungen und Leistungen", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Kasse", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Verbindlichkeiten", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Wareneingang", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was ist ein Aktivkonto?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Ein Konto der Vermögensseite", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Ein Aufwandskonto", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Ein Ertragskonto", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Ein Privatkonto", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Wie lautet die Bilanzgleichung?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Aktiva = Passiva", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Gewinn = Umsatz - Kosten", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Einnahmen = Ausgaben", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Kasse = Forderungen", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was ist der Break-Even-Point?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Der Punkt, an dem Erlös = Kosten ist", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Maximaler Gewinn", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Minimale Produktion", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Verlustgrenze", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was ist eine GmbH?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Gesellschaft mit beschränkter Haftung", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Genossenschaft mit Bestimmung", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Gemeinschaft bürgerlichen Rechts", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Gewerkschaft mit Beamten", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was ist der Zweck eines Businessplans?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Darstellung der Geschäftsidee und Finanzierung", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Planung von Urlaubstagen", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Beschreibung von Softwareprozessen", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Erstellung von Arbeitsverträgen", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Welche Aufgabe hat die Kostenstellenrechnung?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Zuordnung von Kosten auf Betriebsbereiche", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Ermittlung der Gesamtkosten", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Erstellung von Angeboten", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Berechnung von Löhnen", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was bedeutet AIDA im Marketing?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Attention, Interest, Desire, Action", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Analyse, Idee, Design, Abschluss", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Aussage, Inhalt, Druck, Anwendung", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Aktion, Idee, Dauer, Abschluss", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Welche Steuer ist für Unternehmen besonders relevant?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Umsatzsteuer", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Mineralölsteuer", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Tabaksteuer", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Hundesteuer", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was ist der Unterschied zwischen brutto und netto?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Brutto enthält Steuern, netto nicht", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Brutto ist das Endprodukt", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Netto ist mehr als Brutto", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Netto enthält Rabatte", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was ist eine Abschreibung?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Wertminderung von Anlagevermögen", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Kontoauszug", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Steuerzahlung", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Lagerbestandserhöhung", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was beschreibt das magische Dreieck der Investition?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Rentabilität, Liquidität, Sicherheit", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Wachstum, Umsatz, Gewinn", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Kosten, Nutzen, Risiko", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Planung, Durchführung, Kontrolle", "bwlIstKorrekt": false }
+    ]
+  },
+  {
+    "bwlFrageText": "Was bedeutet 'Fremdfinanzierung'?",
+    "bwlKategorie": "Bwl",
+    "bwlAnswers": [
+      { "bwlAntwortText": "Finanzierung durch Kredite oder Darlehen", "bwlIstKorrekt": true },
+      { "bwlAntwortText": "Verkauf von Produkten", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Sponsoring", "bwlIstKorrekt": false },
+      { "bwlAntwortText": "Eigene Rücklagen", "bwlIstKorrekt": false }
+    ]
+  }
+]

@@ -249,6 +249,88 @@
       ]
     },
     {
+      "Route": "data/quizfragenBwl.3n9peryb8a.json",
+      "AssetFile": "data/quizfragenBwl.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8477"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 14:53:31 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3n9peryb8a"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak="
+        },
+        {
+          "Name": "label",
+          "Value": "data/quizfragenBwl.json"
+        }
+      ]
+    },
+    {
+      "Route": "data/quizfragenBwl.json",
+      "AssetFile": "data/quizfragenBwl.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8477"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 14:53:31 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak="
+        }
+      ]
+    },
+    {
       "Route": "favicon.61n19gt1b8.ico",
       "AssetFile": "favicon.ico",
       "Selectors": [],

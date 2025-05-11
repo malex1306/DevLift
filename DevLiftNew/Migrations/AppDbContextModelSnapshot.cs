@@ -147,6 +147,29 @@ namespace DevLiftNew.Migrations
                     b.ToTable("QuizAnswers");
                 });
 
+            modelBuilder.Entity("DevLiftNew.Models.QuizAnswerBwl", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("BwlAntwortText")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("BwlIstKorrekt")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("bwlQuizQuestionId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("bwlQuizQuestionId");
+
+                    b.ToTable("QuizAnswersBwl");
+                });
+
             modelBuilder.Entity("DevLiftNew.Models.QuizQuestion", b =>
                 {
                     b.Property<int>("Id")
@@ -164,6 +187,76 @@ namespace DevLiftNew.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("QuizQuestions");
+                });
+
+            modelBuilder.Entity("DevLiftNew.Models.QuizQuestionBwl", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("BwlFrageText")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BwlKategorie")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("QuizQuestionsBwl");
+                });
+
+            modelBuilder.Entity("DevLiftNew.Models.QuizResultBwl", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("MaxPunkte")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Prozent")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Punkte")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("QuizResultBwl");
+                });
+
+            modelBuilder.Entity("DevLiftNew.Models.QuizResultQuestion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("QuizQuestionBwlId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("QuizResultBwlId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("QuizQuestionBwlId");
+
+                    b.HasIndex("QuizResultBwlId");
+
+                    b.ToTable("QuizResultQuestion");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -316,6 +409,36 @@ namespace DevLiftNew.Migrations
                     b.Navigation("QuizQuestion");
                 });
 
+            modelBuilder.Entity("DevLiftNew.Models.QuizAnswerBwl", b =>
+                {
+                    b.HasOne("DevLiftNew.Models.QuizQuestionBwl", "QuizQuestionBwl")
+                        .WithMany("BwlAnswers")
+                        .HasForeignKey("bwlQuizQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("QuizQuestionBwl");
+                });
+
+            modelBuilder.Entity("DevLiftNew.Models.QuizResultQuestion", b =>
+                {
+                    b.HasOne("DevLiftNew.Models.QuizQuestionBwl", "QuizQuestionBwl")
+                        .WithMany()
+                        .HasForeignKey("QuizQuestionBwlId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevLiftNew.Models.QuizResultBwl", "QuizResultBwl")
+                        .WithMany("BeantworteteFragen")
+                        .HasForeignKey("QuizResultBwlId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("QuizQuestionBwl");
+
+                    b.Navigation("QuizResultBwl");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -370,6 +493,16 @@ namespace DevLiftNew.Migrations
             modelBuilder.Entity("DevLiftNew.Models.QuizQuestion", b =>
                 {
                     b.Navigation("Answers");
+                });
+
+            modelBuilder.Entity("DevLiftNew.Models.QuizQuestionBwl", b =>
+                {
+                    b.Navigation("BwlAnswers");
+                });
+
+            modelBuilder.Entity("DevLiftNew.Models.QuizResultBwl", b =>
+                {
+                    b.Navigation("BeantworteteFragen");
                 });
 #pragma warning restore 612, 618
         }

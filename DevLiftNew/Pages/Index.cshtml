@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
         
         
         <div class="col-md-3 mb-4">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
         
         
         <div class="col-md-3 mb-4">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
         
        
         <div class="col-md-3 mb-4">
@@ -84,7 +84,7 @@
                     <div class="mt-auto text-center">
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                            <a asp-page="/QuizBwl" class="btn btn-dark">Starten</a>
                         }
                         else
                         {
@@ -94,8 +94,28 @@
                 </div>
             </div>
         </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body d-flex flex-column text-center">
+                <h5 class="card-title">Results</h5>
+                <p class="card-text">Hier gehts zu deinen Ergebnissen</p>
+                <div class="mt-auto text-center">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-page="/ResultPage" class="btn btn-dark">Starten</a>
+                    }
+                    else
+                    {
+                        <a asp-page="/Account/Login" class="btn btn-dark">Login</a>
+                    }
+                </div>
+            </div>
         </div>
+    </div>
 </div>
+
 
 
 <div class="container mt-4">

@@ -26,7 +26,7 @@ namespace DevLiftNew.Pages
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var path = Path.Combine(_env.WebRootPath, "data", "quizfragen.json");
+            var path = Path.Combine(_env.WebRootPath, "data", "quizfragenBwl.json");
             if (!System.IO.File.Exists(path))
             {
                 ImportMessage = "Datei nicht gefunden.";
@@ -44,11 +44,11 @@ namespace DevLiftNew.Pages
                 return Page();
             }
 
-            List<QuizQuestion>? fragen;
+            List<QuizQuestionBwl>? fragen;
             try
             {
                 // Case-insensitive Deserialisierung
-                fragen = JsonSerializer.Deserialize<List<QuizQuestion>>(json, new JsonSerializerOptions
+                fragen = JsonSerializer.Deserialize<List<QuizQuestionBwl>>(json, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
@@ -67,9 +67,9 @@ namespace DevLiftNew.Pages
 
             foreach (var frage in fragen)
             {
-                if (!_context.QuizQuestions.Any(f => f.FrageText == frage.FrageText))
+                if (!_context.QuizQuestionsBwl.Any(f => f.BwlFrageText == frage.BwlFrageText))
                 {
-                    _context.QuizQuestions.Add(frage);
+                    _context.QuizQuestionsBwl.Add(frage);
                 }
             }
 

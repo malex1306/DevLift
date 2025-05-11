@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/data/quizfragen.json"
     },
     {
+      "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/data/quizfragenBwl.json",
+      "PackagePath": "staticwebassets/data/quizfragenBwl.json"
+    },
+    {
       "Id": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },

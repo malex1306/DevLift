@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WBqpQn/FbDC7ZmOtX5fUtGeFPPYrrieFo50VO3UOxfM=",
+  "Hash": "l/51ZK+6H4fy3CzUzrFq4eKCyzDZrxeM3bcLnqkG0WE=",
   "Source": "DevLiftNew",
   "BasePath": "_content/DevLiftNew",
   "Mode": "Default",
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/data/quizfragen.json"
+    },
+    {
+      "Identity": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/data/quizfragenBwl.json",
+      "SourceId": "DevLiftNew",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/",
+      "BasePath": "_content/DevLiftNew",
+      "RelativePath": "data/quizfragenBwl#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3n9peryb8a",
+      "Integrity": "8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/data/quizfragenBwl.json"
     },
     {
       "Identity": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/favicon.ico",
@@ -1523,6 +1544,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-WYTwBJl6moL8GJ53y60pFlr21tdiPj60a0eIwkS4XSY="
+        }
+      ]
+    },
+    {
+      "Route": "data/quizfragenBwl.3n9peryb8a.json",
+      "AssetFile": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/data/quizfragenBwl.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8477"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 14:53:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3n9peryb8a"
+        },
+        {
+          "Name": "label",
+          "Value": "data/quizfragenBwl.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak="
+        }
+      ]
+    },
+    {
+      "Route": "data/quizfragenBwl.json",
+      "AssetFile": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/wwwroot/data/quizfragenBwl.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8477"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 14:53:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak="
         }
       ]
     },

@@ -24,6 +24,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WYTwBJl6moL8GJ53y60pFlr21tdiPj60a0eIwkS4XSY="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"11631"},{"Name":"Content-Type","Value":"application/json"},{"Name":"ETag","Value":"\u0022WYTwBJl6moL8GJ53y60pFlr21tdiPj60a0eIwkS4XSY=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 19:44:52 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DevLiftNew/data/quizfragenBwl.3n9peryb8a.json">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\data\quizfragenBwl.json'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3n9peryb8a"},{"Name":"integrity","Value":"sha256-8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak="},{"Name":"label","Value":"_content/DevLiftNew/data/quizfragenBwl.json"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"8477"},{"Name":"Content-Type","Value":"application/json"},{"Name":"ETag","Value":"\u00228QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak=\u0022"},{"Name":"Last-Modified","Value":"Sat, 10 May 2025 14:53:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DevLiftNew/data/quizfragenBwl.json">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\data\quizfragenBwl.json'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-8QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"8477"},{"Name":"Content-Type","Value":"application/json"},{"Name":"ETag","Value":"\u00228QhLEAC7eFu4K8qz7DatQlCgiU2/3JHCTWhSe4g2Yak=\u0022"},{"Name":"Last-Modified","Value":"Sat, 10 May 2025 14:53:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/DevLiftNew/DevLiftNew.4t2cyno6tt.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\DevLiftNew.4t2cyno6tt.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

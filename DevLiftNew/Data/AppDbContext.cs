@@ -8,33 +8,50 @@ namespace DevLiftNew.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options) { }
-        
-        // Deine DbSets für die Tabellen
+
         public DbSet<Flashcard> Flashcards { get; set; }
         public DbSet<QuizQuestion> QuizQuestions { get; set; }
         public DbSet<QuizAnswer> QuizAnswers { get; set; }
+        public DbSet<QuizQuestionBwl> QuizQuestionsBwl { get; set; }
+        public DbSet<QuizAnswerBwl> QuizAnswersBwl { get; set; }
+        public DbSet<QuizResultBwl> QuizResultBwl { get; set; }
+        public DbSet<QuizResultQuestion> QuizResultQuestion { get; set; }
 
-        // OnModelCreating wird hier zum Konfigurieren von Entitäten verwendet
         protected override void OnModelCreating(ModelBuilder builder)
-{
-    base.OnModelCreating(builder); // Muss beibehalten werden, um die Standardmodelle von Identity zu integrieren
-    
-    // Konfiguration für Flashcards und die Beziehung zu AppUser
-    builder.Entity<Flashcard>()
-        .HasOne(f => f.CreatedBy) // Flashcard ist mit einem AppUser verbunden
-        .WithMany() // Ein AppUser kann viele Flashcards haben
-        .HasForeignKey(f => f.CreatedById) // Der Fremdschlüssel ist CreatedById
-        .OnDelete(DeleteBehavior.Restrict); // Löschen von Flashcards verhindert, wenn der Benutzer gelöscht wird
+        {
+            base.OnModelCreating(builder);
 
-    // Konfiguration für QuizQuestion und QuizAnswer
-    builder.Entity<QuizQuestion>()
-        .HasMany(q => q.Answers) // Eine QuizQuestion kann viele QuizAnswers haben
-        .WithOne(a => a.QuizQuestion) // Eine QuizAnswer gehört zu einer QuizQuestion
-        .HasForeignKey(a => a.QuizQuestionId) // Der Fremdschlüssel in QuizAnswer ist QuizQuestionId
-        .OnDelete(DeleteBehavior.Cascade); // Löschen der Frage löscht auch die Antworten
+            // Beziehung Flashcard ↔ AppUser
+            builder.Entity<Flashcard>()
+                .HasOne(f => f.CreatedBy)
+                .WithMany()
+                .HasForeignKey(f => f.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
 
-    // Optional: Du kannst auch für andere Entitäten zusätzliche Beziehungen konfigurieren
-}
+            // Beziehung QuizQuestion ↔ QuizAnswer
+            builder.Entity<QuizQuestion>()
+                .HasMany(q => q.Answers)
+                .WithOne(a => a.QuizQuestion)
+                .HasForeignKey(a => a.QuizQuestionId)
+                .OnDelete(DeleteBehavior.Cascade);
 
+            // Beziehung QuizQuestionBwl ↔ QuizAnswerBwl
+            builder.Entity<QuizAnswerBwl>()
+                .HasOne(a => a.QuizQuestionBwl)
+                .WithMany(q => q.BwlAnswers)
+                .HasForeignKey(a => a.bwlQuizQuestionId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            builder.Entity<QuizResultQuestion>()
+                .HasOne(qr => qr.QuizResultBwl)
+                .WithMany(q => q.BeantworteteFragen)
+                .HasForeignKey(qr => qr.QuizResultBwlId);
+
+            builder.Entity<QuizResultQuestion>()
+                .HasOne(qr => qr.QuizQuestionBwl)
+                .WithMany()
+                .HasForeignKey(qr => qr.QuizQuestionBwlId);
+            
+        }
     }
 }
