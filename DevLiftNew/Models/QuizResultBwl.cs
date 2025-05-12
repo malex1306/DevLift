@@ -8,5 +8,7 @@ public class QuizResultBwl
     public int Punkte {get; set;}
     public int MaxPunkte {get; set;}
     public int Prozent {get; set;}
+    
     public List<QuizResultQuestion> BeantworteteFragen { get; set; } = new();
+    // public List<QuizResultQuestion>? Frage { get; set; }
 }

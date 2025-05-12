@@ -9,5 +9,6 @@ public class QuizResultQuestion
     public int QuizQuestionBwlId { get; set; }  
     public QuizQuestionBwl QuizQuestionBwl { get; set; }
     
-    public bool IsCorrect { get; set; }  
+    public bool IsCorrect { get; set; }
+    public string AnswerId { get; set; }
 }

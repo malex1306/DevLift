@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Identity;
@@ -14,13 +15,8 @@ namespace DevLiftNew.Pages
         private readonly AppDbContext _dbContext;
 
         public int CompletionRate { get; set; } = 75;
-        public string WelcomeMessage { get; set; } = "Willkomen bei DevLift";
+        public string WelcomeMessage { get; set; } = "Willkommen bei DevLift";
         public List<QuizQuestionBwl> FragenBwl { get; private set; } = new();
-
-        private int correctCount = 0;
-        private int wrongCount = 0;
-        private HashSet<int> answeredQuestions = new HashSet<int>();
-        private Dictionary<int, int> userAnswers = new Dictionary<int, int>(); // FragenId -> AntwortId
 
         public QuizBwlModel(ILogger<QuizBwlModel> logger, UserManager<AppUser> userManager, AppDbContext dbContext)
         {
@@ -28,6 +24,9 @@ namespace DevLiftNew.Pages
             _userManager = userManager;
             _dbContext = dbContext;
         }
+
+        [BindProperty]
+        public List<QuizAntwortModel>Antworten { get; set; } = new();
 
         public async Task OnGetAsync()
         {
@@ -45,100 +44,64 @@ namespace DevLiftNew.Pages
                     Id = a.Id,
                     BwlFrageText = a.BwlFrageText,
                     BwlKategorie = a.BwlKategorie,
-                    BwlAnswers = a.BwlAnswers.ToList()
+                    BwlAnswers = a.BwlAnswers!.ToList()
                 }).ToList();
 
             var rnd = new Random();
             FragenBwl = fragenAusDb.OrderBy(_ => rnd.Next()).ToList();
 
-            foreach (var fragen in FragenBwl)
+            foreach (var frage in FragenBwl)
             {
-                fragen.BwlAnswers = fragen.BwlAnswers.OrderBy(_ => rnd.Next()).ToList();
+                if (frage.BwlAnswers != null)
+                    frage.BwlAnswers = frage.BwlAnswers.OrderBy(_ => rnd.Next()).ToList();
             }
         }
 
-        public async Task<IActionResult> OnPostSaveResultAsync()
+        public async Task<IActionResult> OnPostAsync(int Punkte, int MaxPunkte, int Prozent, string AntwortenJson)
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
+                return Unauthorized();
+
+            List<QuizAntwortModel>? antworten;
+            try
             {
-                return RedirectToPage("/Index");
+                antworten = JsonSerializer.Deserialize<List<QuizAntwortModel>>(AntwortenJson);
             }
+            catch
+            {
+                return BadRequest("Fehler beim Verarbeiten der Antworten.");
+            }
+
+            if (antworten == null || antworten.Count == 0)
+                return BadRequest("Keine Antworten empfangen.");
 
             var result = new QuizResultBwl
             {
+                Punkte = Punkte,
+                MaxPunkte = MaxPunkte,
+                Prozent = Prozent,
                 UserId = user.Id,
-                Date = DateTime.Now,
-                Punkte = correctCount,
-                MaxPunkte = correctCount + wrongCount,
-                Prozent = (int)((double)correctCount / (correctCount + wrongCount) * 100),
-                BeantworteteFragen = new List<QuizResultQuestion>()
+                Date = DateTime.Now
             };
 
-            foreach (var fragenId in answeredQuestions)
-            {
-                if (FragenBwl.FirstOrDefault(f => f.Id == fragenId) is { } frage && userAnswers.TryGetValue(fragenId, out var antwortId))
-                {
-                    var richtigeAntwortVorhanden = frage.BwlAnswers.Any(a => a.Id == antwortId && a.BwlIstKorrekt);
-                    result.BeantworteteFragen.Add(new QuizResultQuestion
-                    {
-                        QuizQuestionBwlId = fragenId,
-                        IsCorrect = richtigeAntwortVorhanden
-                    });
-                }
-            }
+            _dbContext.QuizResultBwl.Add(result);
+            await _dbContext.SaveChangesAsync();
 
-            try
-            {
-                _dbContext.QuizResultBwl.Add(result);
-                await _dbContext.SaveChangesAsync();
-                return RedirectToPage("/ResultPage", new { userId = user.Id });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Fehler beim Speichern der Quiz-Ergebnisse: {ex.Message}");
-                return RedirectToPage("/Error");
-            }
+            return RedirectToPage("/ResultPage", new { quizId = result.Id });
         }
 
-        public void CheckAnswer(int fragenId, int antwortId)
+        public async Task<IActionResult> OnPostAddQuestionAsync(string bwlFrageText, string bwlAntworten, string bwlKategorie)
         {
-            
-            if (answeredQuestions.Contains(fragenId)) return;
-
-            answeredQuestions.Add(fragenId);
-            userAnswers[fragenId] = antwortId; // Speichere die Antwort des Benutzers
-
-            var frage = FragenBwl.First(f => f.Id == fragenId);
-            var antwort = frage.BwlAnswers.First(a => a.Id == antwortId);
-
-            if (antwort.BwlIstKorrekt)
-            {
-                correctCount++;
-            }
-            else
-            {
-                wrongCount++;
-            }
-
-            if (answeredQuestions.Count == FragenBwl.Count)
-            {
-                OnPostSaveResultAsync().Wait();
-            }
-        }
-
-        public async Task<IActionResult> OnPostAddQuestionAsync(string bwlFrageText, string bwlAntworten,
-            string bwlKategorie)
-        {
-            if (string.IsNullOrWhiteSpace(bwlFrageText) || string.IsNullOrWhiteSpace(bwlAntworten) ||
-                string.IsNullOrWhiteSpace(bwlKategorie))
+            if (string.IsNullOrWhiteSpace(bwlFrageText) || string.IsNullOrWhiteSpace(bwlAntworten) || string.IsNullOrWhiteSpace(bwlKategorie))
                 return RedirectToPage();
+
             var bwlAntwotenList = bwlAntworten
                 .Split(",")
-                .Select((text, index) => new QuizAnswerBwl()
+                .Select(text => new QuizAnswerBwl
                 {
                     BwlAntwortText = text.Trim(),
-                    BwlIstKorrekt = text.Trim().ToLower().Contains("korrekt") // Beispielhafte Logik, anpassen!
+                    BwlIstKorrekt = text.Trim().Contains("korrekt", StringComparison.CurrentCultureIgnoreCase)
                 })
                 .ToList();
 

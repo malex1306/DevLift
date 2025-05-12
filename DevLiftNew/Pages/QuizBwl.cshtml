@@ -1,8 +1,10 @@
 @page
 @model DevLiftNew.Pages.QuizBwlModel
 @{
-    ViewData["Title"] = "Quiz Bwl";
+ViewData["Title"] = "Quiz Bwl";
 }
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+
 <div class="text-center">
     <h1 class="display-4">Quiz Bwl @Model.WelcomeMessage</h1>
 </div>
@@ -10,50 +12,70 @@
 <div class="container mt-5">
     @for (int q = 0; q < Model.FragenBwl.Count; q++)
     {
-        var frage = Model.FragenBwl[q];
-        <div class="row frage-slide @(q == 0 ? "" : "d-none")" id="frage-slide-@q">
-            <div class="col-md-12 mb-4">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">@frage.BwlFrageText</h5>
+    var frage = Model.FragenBwl[q];
+    <div class="row frage-slide @(q == 0 ? "" : "d-none")" id="frage-slide-@q">
+        <div class="col-md-12 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-center">@frage.BwlFrageText</h5>
 
-                        @for (int i = 0; i < frage.BwlAnswers.Count; i++)
-                        {
-                            var antwort = frage.BwlAnswers[i];
-                            var inputId = $"frage{frage.Id}_antwort{i}";
-                            <div class="form-check">
-                                <input class="form-check-input"
-                                       type="radio"
-                                       name="frage@frage.Id"
-                                       id="@inputId"
-                                       value="@(antwort.BwlIstKorrekt ? "richtig" : "falsch")"
-                                       onclick="checkAnswer(this, @q)">
-                                <label class="form-check-label" for="@inputId">
-                                    @antwort.BwlAntwortText
-                                </label>
-                            </div>
-                        }
-
-                        <div id="feedback@frage.Id" class="mt-3 fw-bold"></div>
+                    @if (frage.BwlAnswers != null)
+                    {
+                    for (int i = 0; i < frage.BwlAnswers.Count; i++)
+                    {
+                    var antwort = frage.BwlAnswers[i];
+                    var inputId = $"frage{frage.Id}_antwort{i}";
+                    <div class="form-check">
+                        <input class="form-check-input"
+                               type="radio"
+                               name="frage@frage.Id"
+                               id="@inputId"
+                               value="@(antwort.BwlIstKorrekt ? "richtig" : "falsch")"
+                               onclick="checkAnswer(this, @q)">
+                        <label class="form-check-label" for="@inputId">
+                            @antwort.BwlAntwortText
+                        </label>
                     </div>
+                    }
+                    }
+
+                    <div id="feedback@frage.Id" class="mt-3 fw-bold"></div>
                 </div>
             </div>
         </div>
+    </div>
     }
 
-    <!-- Quiz Ende Übersicht -->
+    <!-- Ergebnisbereich -->
     <div class="row d-none" id="quiz-end">
         <div class="col-md-12 text-center mt-5">
-            <h3>🎉 Du hast das Quiz abgeschlossen!</h3>
+            <h3>Du hast das Quiz abgeschlossen!</h3>
             <p><strong id="result-correct"></strong> richtig beantwortet</p>
             <p><strong id="result-wrong"></strong> falsch beantwortet</p>
             <p><strong id="result-percentage"></strong>% richtig</p>
             <button class="btn btn-secondary mt-3" onclick="location.reload()">Erneut spielen</button>
         </div>
+
+        <!-- POST-Formular zum Speichern -->
+        <form id="resultForm" method="post" asp-page-handler="SaveResult" class="text-center">
+            <input type="hidden" name="Punkte" id="punkteInput" />
+            <input type="hidden" name="MaxPunkte" id="maxPunkteInput" />
+            <input type="hidden" name="Prozent" id="prozentInput" />
+            <input type="hidden" name="AntwortenJson" id="antwortenJsonInput" />
+
+            <button type="button" class="btn btn-primary mt-3" onclick="saveResult()">Ergebnisse speichern</button>
+        </form>
     </div>
 
-    <!-- Formular zum Hinzufügen neuer Fragen -->
-    <div class="row mt-5">
+    <!-- Button zum Anzeigen des Frageformulars -->
+    <div class="row mt-5 text-center">
+        <div class="col-md-12">
+            <button class="btn btn-outline-secondary" onclick="toggleForm()">Neue Frage hinzufügen</button>
+        </div>
+    </div>
+
+    <!-- Frageformular (anfangs versteckt) -->
+    <div class="row mt-3 d-none" id="frage-formular">
         <div class="col-md-8 offset-md-2">
             <div class="card shadow-sm">
                 <div class="card-body">
@@ -88,51 +110,65 @@
 </div>
 
 @section Scripts {
-    <script>
-        let correctCount = 0;
-        let wrongCount = 0;
-        let answeredQuestions = new Set();
+<script>
+    let correctCount = 0;
+    let wrongCount = 0;
+    let answeredQuestions = new Set();
+    let userAnswers = [];
 
-        function checkAnswer(element, index) {
-            const frageId = element.name.replace("frage", "");
-            const feedback = document.getElementById("feedback" + frageId);
+    function checkAnswer(element, index) {
+        const frageId = element.name.replace("frage", "");
+        const isCorrect = element.value === 'richtig';
+        const answerId = element.id;
 
-            if (answeredQuestions.has(index)) return;
-            answeredQuestions.add(index);
+        if (answeredQuestions.has(index)) return;
+        answeredQuestions.add(index);
 
-            if (element.value === 'richtig') {
-                feedback.innerHTML = "✅ Richtig!";
-                feedback.style.color = "green";
-                correctCount++;
-            } else {
-                feedback.innerHTML = "❌ Leider falsch.";
-                feedback.style.color = "red";
-                wrongCount++;
+        userAnswers.push({
+            frageId: parseInt(frageId),
+            answerId: parseInt(answerId.replace(/\D/g, '')),
+            isCorrect: isCorrect
+        });
+
+        const feedback = document.getElementById("feedback" + frageId);
+        feedback.innerHTML = isCorrect ? "Richtig!" : "Leider falsch.";
+        feedback.style.color = isCorrect ? "green" : "red";
+
+        if (isCorrect) correctCount++;
+        else wrongCount++;
+
+        // Nächste Frage anzeigen
+        setTimeout(() => {
+            const currentSlide = document.getElementById("frage-slide-" + index);
+            const nextSlide = document.getElementById("frage-slide-" + (index + 1));
+
+            if (currentSlide) currentSlide.classList.add("d-none");
+            if (nextSlide) nextSlide.classList.remove("d-none");
+            else {
+                const total = correctCount + wrongCount;
+                const percentage = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+                document.getElementById("result-correct").innerText = correctCount;
+                document.getElementById("result-wrong").innerText = wrongCount;
+                document.getElementById("result-percentage").innerText = percentage;
+
+                document.getElementById("punkteInput").value = correctCount;
+                document.getElementById("maxPunkteInput").value = correctCount + wrongCount;
+                document.getElementById("prozentInput").value = percentage;
+                document.getElementById("antwortenJsonInput").value = JSON.stringify(userAnswers);
+
+                document.getElementById("quiz-end").classList.remove("d-none");
             }
+        }, 1000);
+    }
 
-            // Nächste Frage nach 1 Sekunde anzeigen
-            setTimeout(() => {
-                const currentSlide = document.getElementById("frage-slide-" + index);
-                const nextSlide = document.getElementById("frage-slide-" + (index + 1));
+    function saveResult() {
+        document.getElementById("resultForm").submit();
+    }
 
-                if (currentSlide) {
-                    currentSlide.classList.add("d-none");
-                }
-
-                if (nextSlide) {
-                    nextSlide.classList.remove("d-none");
-                } else {
-                    // Quiz fertig
-                    const total = correctCount + wrongCount;
-                    const percentage = total > 0 ? Math.round((correctCount / total) * 100) : 0;
-
-                    document.getElementById("result-correct").innerText = correctCount;
-                    document.getElementById("result-wrong").innerText = wrongCount;
-                    document.getElementById("result-percentage").innerText = percentage;
-
-                    document.getElementById("quiz-end").classList.remove("d-none");
-                }
-            }, 1000);
-        }
-    </script>
+    function toggleForm() {
+        const form = document.getElementById("frage-formular");
+        form.classList.toggle("d-none");
+    }
+</script>
 }

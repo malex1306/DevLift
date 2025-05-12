@@ -10,40 +10,32 @@ namespace DevLiftNew.Pages
     {
         private readonly AppDbContext _context;
 
-        public int CorrectCount { get; set; }
-        public int TotalQuestions { get; set; }
-        public int Percentage { get; set; }
-        public List<QuizResultQuestion> BeantworteteFragen { get; set; }
-
         public ResultPageModel(AppDbContext context)
         {
             _context = context;
         }
 
-        public void OnGet(string userId)
-        {
-            var results = _context.QuizResultBwl
-                .Where(r => r.UserId == userId)
-                .OrderByDescending(r => r.Date)
-                .FirstOrDefault();
+        public int CorrectCount { get; set; }
+        public int TotalQuestions { get; set; }
+        public int Percentage { get; set; }
 
-            if (results != null)
+        public List<QuizResultQuestion> BeantworteteFragen { get; set; } = new();
+
+        public void OnGet(int quizId)
+        {
+            var result = _context.QuizResultBwl
+                .Include(r => r.BeantworteteFragen)
+                .ThenInclude(f => f.QuizQuestionBwl)
+                .FirstOrDefault(r => r.Id == quizId);
+
+            if (result != null)
             {
-                CorrectCount = results.Punkte;
-                TotalQuestions = results.MaxPunkte;
-                Percentage = results.Prozent;
-                
-                BeantworteteFragen = _context.QuizResultQuestion
-                    .Where(q => q.QuizResultBwlId == results.Id)
-                    .Include(q => q.QuizQuestionBwl)  // Frage mit einbeziehen
-                    .ToList();
-            }
-            else
-            {
-                BeantworteteFragen = new List<QuizResultQuestion>(); 
+                CorrectCount = result.Punkte;
+                TotalQuestions = result.MaxPunkte;
+                Percentage = result.MaxPunkte > 0 ? (int)((double)CorrectCount / TotalQuestions * 100) : 0;
+
+                BeantworteteFragen = result.BeantworteteFragen;
             }
         }
-
-        
     }
 }
