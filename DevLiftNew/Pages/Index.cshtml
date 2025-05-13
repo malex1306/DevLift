@@ -44,7 +44,7 @@
                     <div class="mt-auto text-center">
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <a asp-page="/Quiz" class="btn btn-dark">Starten</a>
+                            <a asp-page="/IHKQuiz/Frage1" class="btn btn-dark">Starten</a>
                         }
                         else
                         {
@@ -128,7 +128,8 @@
                     <p class="mt-2 text-muted">
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <span>75% aller Quizzes abgeschlossen</span>
+                            <span>@(((double?)ViewData["UserProgress"])?.ToString("0.00"))% aller Quizzes abgeschlossen</span>
+
                         }
                         else
                         {
@@ -173,11 +174,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const ctx = document.getElementById('doughnutChart').getContext('2d');
+            const progress = @ViewData["UserProgress"];
+            
             new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     datasets: [{
-                        data: [75, 25],
+                        data: [progress, 100 - progress],
                         backgroundColor: ['#4e73df', '#f8f9fa'],
                         borderWidth: 0
                     }]

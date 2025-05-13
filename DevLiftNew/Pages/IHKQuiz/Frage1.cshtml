@@ -1,0 +1,46 @@
+@page
+@model DevLiftNew.Pages.IHKQuiz.Frage1Model
+@{
+    ViewData["Title"] = "Frage 1 - Pseudocode";
+}
+
+<h2>Frage 1 – Pseudocode</h2>
+
+<div class="card p-3 shadow-sm">
+    <p><strong>Aufgabe:</strong> Schreiben Sie einen Pseudocode, der prüft, ob eine eingegebene Zahl gerade ist.</p>
+
+    <form method="post">
+        <div id="editor-container" style="height: 300px; border: 1px solid #ccc;"></div>
+
+        <!-- 🛠 Korrektur: Name sollte "UserCode" sein (nicht "Usercode") -->
+        <input type="hidden" name="UserCode" id="UserCode" />
+
+        <button type="submit" class="btn btn-primary mt-3">Antwort überprüfen</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.Feedback))
+    {
+        <div class="alert alert-info mt-3">@Model.Feedback</div>
+    }
+</div>
+
+<!-- ✅ Monaco Editor einbinden -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs/loader.min.js"></script>
+<script>
+    require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs' } });
+
+    require(['vs/editor/editor.main'], function () {
+        window.editor = monaco.editor.create(document.getElementById('editor-container'), {
+            value: '',
+            language: 'csharp', 
+            theme: 'vs-light',
+            fontSize: 20,
+            automaticLayout: true
+        });
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function () {
+            document.getElementById('UserCode').value = window.editor.getValue();
+        });
+    });
+</script>

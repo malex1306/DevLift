@@ -90,6 +90,7 @@ namespace DevLiftNew.Pages
 
             return RedirectToPage("/ResultPage", new { quizId = result.Id });
         }
+        
 
         public async Task<IActionResult> OnPostAddQuestionAsync(string bwlFrageText, string bwlAntworten, string bwlKategorie)
         {
