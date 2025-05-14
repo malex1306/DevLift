@@ -4,15 +4,15 @@
     ViewData["Title"] = "Frage 1 - Pseudocode";
 }
 
-<h2>Frage 1 – Pseudocode</h2>
+<h2 class="Frage1">Frage 1 – Csharp Code</h2>
 
-<div class="card p-3 shadow-sm">
-    <p><strong>Aufgabe:</strong> Schreiben Sie einen Pseudocode, der prüft, ob eine eingegebene Zahl gerade ist.</p>
+<div class="card p-3 shadow-sm mt-5">
+    <p><strong>Aufgabe:</strong> Schreiben Sie einen Csharp Code ein, der prüft, ob eine eingegebene Zahl gerade ist.</p>
 
     <form method="post">
-        <div id="editor-container" style="height: 300px; border: 1px solid #ccc;"></div>
+        <div id="editor-container" style="height: 300px; border: 1px solid #ccc; margin-top: 20px;"></div>
 
-        <!-- 🛠 Korrektur: Name sollte "UserCode" sein (nicht "Usercode") -->
+
         <input type="hidden" name="UserCode" id="UserCode" />
 
         <button type="submit" class="btn btn-primary mt-3">Antwort überprüfen</button>
@@ -22,9 +22,13 @@
     {
         <div class="alert alert-info mt-3">@Model.Feedback</div>
     }
+    @if (Model.IsCorrect)
+    {
+        <a class="btn btn-success mt-3" href="/IHKQuiz/Frage2">Weiter</a>
+    }
 </div>
 
-<!-- ✅ Monaco Editor einbinden -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs/loader.min.js"></script>
 <script>
     require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs' } });
@@ -44,3 +48,4 @@
         });
     });
 </script>
+

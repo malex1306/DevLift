@@ -1,0 +1,41 @@
+@page
+@model DevLiftNew.Pages.IHKQuiz.Frage2Model
+@{
+    ViewData["Title"] = "Frage 2 – Kontrollstrukturen";
+}
+
+<h2>Frage 2 – Kontrollstrukturen</h2>
+
+<div class="card p-3 shadow-sm">
+    <p><strong>Welche Aussagen über Schleifen in C# sind korrekt?</strong></p>
+
+    <form method="post">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="SelectedAnswers" value="1" id="a1" />
+            <label class="form-check-label" for="a1">Eine <code>for</code>-Schleife ist besonders geeignet, wenn die Anzahl der Durchläufe bekannt ist.</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="SelectedAnswers" value="2" id="a2" />
+            <label class="form-check-label" for="a2"><code>while</code>-Schleifen werden immer mindestens einmal ausgeführt.</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="SelectedAnswers" value="3" id="a3" />
+            <label class="form-check-label" for="a3"><code>do-while</code>-Schleifen werden mindestens einmal ausgeführt.</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="SelectedAnswers" value="4" id="a4" />
+            <label class="form-check-label" for="a4">Eine Schleife kann nicht ohne Bedingung existieren.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Antwort überprüfen</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.Feedback))
+    {
+        <div class="alert alert-info mt-3">@Model.Feedback</div>
+    }
+    @if (Model.IsCorrect)
+    {
+        <a class="btn btn-success mt-3" href="/IHKQuiz/Frage3">Weiter</a>
+    }
+</div>
