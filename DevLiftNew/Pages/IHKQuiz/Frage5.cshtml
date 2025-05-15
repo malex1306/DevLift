@@ -1,0 +1,74 @@
+@page
+@model DevLiftNew.Pages.IHKQuiz.Frage5Model
+@{
+    ViewData["Title"] = "Frage 5 - Komplexe Logik mit Methoden & Bedingungen";
+}
+
+<h2>Frage 5 - Komplexe Logik mit Methoden & Bedingungen</h2>
+
+<div class="card p-3 shadow-sm">
+    <p><strong>Was gibt der folgende C#-Code in der Konsole aus?</strong></p>
+    
+    <pre><code>public class Program
+{
+    public static void Main()
+    {
+        int result = Berechne(3, 4);
+        Console.WriteLine(result);
+    }
+
+    public static int Berechne(int a, int b)
+    {
+        if (a > b)
+        {
+            return a - b;
+        }
+        else if (a == b)
+        {
+            return a * b;
+        }
+        else
+        {
+            int summe = 0;
+            for (int i = a; i < b; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    continue;
+                }
+                summe += i;
+            }
+            return summe;
+        }
+    }
+}</code></pre>
+    <form method="post">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="A" id="a1" />
+            <label class="form-check-label" for="a1">A)3</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="B" id="a2" />
+            <label class="form-check-label" for="a2">B) 7</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="C" id="a3" />
+            <label class="form-check-label" for="a3">C) 12</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="D" id="a4" />
+            <label class="form-check-label" for="a4">D) 10</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Antwort überprüfen</button>
+    </form>
+    
+    @if (Model.IsCorrect)
+    {
+        <div class="alert alert-info mt-3">@Model.Feedback</div>
+    }
+    @if (Model.IsCorrect)
+    {
+        <a class="btn btn-success mt-3" href="/IHKQuiz/Frage6">Weiter</a>   
+    }
+</div>

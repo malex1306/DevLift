@@ -1,0 +1,45 @@
+@page
+@model DevLiftNew.Pages.IHKQuiz.Frage3Model
+@{
+    ViewData["Title"] = "Frage 3 – Casting & Operatoren";
+}
+
+<h2>Frage 3 – Casting & Operatoren</h2>
+
+<div class="card p-3 shadow-sm">
+    <p><strong>Was ist der Wert der Variablen <code>ergebnis</code> nach Ausführung des folgenden Codes?</strong></p>
+
+    <pre><code>int x = 7;
+int y = 2;
+double ergebnis = (double)x / y;</code></pre>
+
+    <form method="post">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="A" id="a1" />
+            <label class="form-check-label" for="a1">A) 3</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="B" id="a2" />
+            <label class="form-check-label" for="a2">B) 3.0</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="C" id="a3" />
+            <label class="form-check-label" for="a3">C) 3.5</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="D" id="a4" />
+            <label class="form-check-label" for="a4">D) Fehler zur Laufzeit</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Antwort überprüfen</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.Feedback))
+    {
+        <div class="alert alert-info mt-3">@Model.Feedback</div>
+    }
+    @if (Model.IsCorrect)
+    {
+        <a class="btn btn-success mt-3" href="/IHKQuiz/Frage4">Weiter</a>
+    }
+</div>

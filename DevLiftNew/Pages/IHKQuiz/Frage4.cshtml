@@ -1,0 +1,57 @@
+@page
+@model DevLiftNew.Pages.IHKQuiz.Frage4Model
+@{
+    ViewData["Title"] = "Frage 4 – Codeanalyse & Fehlersuche";
+}
+
+<h2>Frage 4 – Codeanalyse & Fehlersuche</h2>
+
+<div class="card p-3 shadow-sm">
+    <p><strong>Der folgende C#-Code kompiliert erfolgreich, liefert aber nicht das erwartete Ergebnis. Was ist der Fehler?</strong></p>
+
+    <pre><code>public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine(BerechneQuadrat(4));
+    }
+
+    public static int BerechneQuadrat(int x)
+    {
+        int ergebnis;
+        ergebnis = x;
+        ergebnis * x;
+        return ergebnis;
+    }
+}</code></pre>
+
+    <form method="post">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="A" id="a1" />
+            <label class="form-check-label" for="a1">A) Die Methode liefert immer 0 zurück.</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="B" id="a2" />
+            <label class="form-check-label" for="a2">B) Die Methode verursacht einen Compilerfehler wegen der Rückgabe.</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="C" id="a3" />
+            <label class="form-check-label" for="a3">C) Die Berechnung <code>ergebnis * x;</code> hat keine Wirkung, da das Ergebnis nicht gespeichert wird.</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="SelectedAnswer" value="D" id="a4" />
+            <label class="form-check-label" for="a4">D) Es handelt sich um eine Endlosschleife durch rekursiven Aufruf.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Antwort überprüfen</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.Feedback))
+    {
+        <div class="alert alert-info mt-3">@Model.Feedback</div>
+    }
+    @if (Model.IsCorrect)
+    {
+        <a class="btn btn-success mt-3" href="/IHKQuiz/Frage5">Weiter</a>
+    }
+</div>
