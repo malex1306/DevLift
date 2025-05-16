@@ -1,0 +1,52 @@
+@page
+@model DevLiftNew.Pages.IHKQuiz.Frage6Model
+@{
+    ViewData["Title"] = "Frage 6 – Spiegelwort erkennen";
+}
+
+<h2 class="Fragen">Frage 4 – Spiegelwort erkennen</h2>
+
+<div class="card p-3 shadow-sm mt-5">
+<p><strong>Aufgabe:</strong> Erstelle eine Methode <code>IstSpiegelwort(string eingabe)</code>, die <code>true</code> zurückgibt, wenn ein Wort ein Spiegelwort ist.</p>
+
+<ul>
+    <li><strong>Beispiel:</strong> <code>abccba</code> → <code>true</code></li>
+    <li>Hinweis: Die Länge der Eingabe ist immer gerade.</li>
+</ul>
+
+<form method="post">
+    <div id="editor" style="height: 300px; border: 1px solid #ccc;">@Model.UserCode</div>
+    <textarea name="UserCode" id="UserCode" hidden>@Model.UserCode</textarea>
+    <button type="submit" class="btn btn-primary mt-3">Antwort überprüfen</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Feedback))
+{
+    <div class="alert alert-info mt-3">@Model.Feedback</div>
+}
+
+@if (Model.IsCorrect)
+{
+    <a class="btn btn-success mt-3" href="/IHKQuiz/Frage7">Weiter</a>
+}
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
+    <script>
+        require.config({ paths: { 'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs' }});
+        require(['vs/editor/editor.main'], function () {
+            window.editor = monaco.editor.create(document.getElementById('editor'), {
+                value: document.getElementById('UserCode').value,
+                language: 'csharp',
+                theme: 'vs-light',
+                fontSize: 18,
+                automaticLayout: true
+            });
+
+            document.querySelector('form').addEventListener('submit', function () {
+                document.getElementById('UserCode').value = window.editor.getValue();
+            });
+        });
+    </script>
+}

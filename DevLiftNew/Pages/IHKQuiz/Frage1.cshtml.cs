@@ -4,18 +4,30 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Threading.Tasks;
+using DevLiftNew.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace DevLiftNew.Pages.IHKQuiz
 {
     public class Frage1Model : PageModel
     {
+        private readonly UserManager<AppUser> _userManager;
         [BindProperty]
         public string UserCode { get; set; }
         public string Feedback { get; set; }
         public bool IsCorrect { get; set; }
+        public string WelcomeMessage { get; set; }
+
+        public Frage1Model(UserManager<AppUser> userManager)
+        {
+            _userManager = userManager;
+        }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            var user = await _userManager.GetUserAsync(User);
+            WelcomeMessage = user != null ? $"Hey, {user.FirstName ?? "Freund"}!" : "Willkommen zurück!";
+            
             if (string.IsNullOrWhiteSpace(UserCode))
             {
                 Feedback = "Bitte gib deinen Code ein.";
