@@ -3077,25 +3077,24 @@
     ]
   },
   "packageFolders": {
-    "/Users/marcelalexandre/.nuget/packages/": {}
+    "/home/marcel/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/DevLiftNew.csproj",
+      "projectUniqueName": "/home/marcel/RiderProjects/DevLift/DevLiftNew/DevLiftNew.csproj",
       "projectName": "DevLiftNew",
-      "projectPath": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/DevLiftNew.csproj",
-      "packagesPath": "/Users/marcelalexandre/.nuget/packages/",
-      "outputPath": "/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/obj/",
+      "projectPath": "/home/marcel/RiderProjects/DevLift/DevLiftNew/DevLiftNew.csproj",
+      "packagesPath": "/home/marcel/.nuget/packages/",
+      "outputPath": "/home/marcel/RiderProjects/DevLift/DevLiftNew/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/marcelalexandre/.nuget/NuGet/NuGet.Config"
+        "/home/marcel/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3113,8 +3112,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -3162,7 +3160,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/marcel/.dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

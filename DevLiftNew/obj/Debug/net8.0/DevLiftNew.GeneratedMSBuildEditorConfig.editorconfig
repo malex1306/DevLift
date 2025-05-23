@@ -17,109 +17,111 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DevLiftNew
 build_property.RootNamespace = DevLiftNew
-build_property.ProjectDir = /Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/
+build_property.ProjectDir = /home/marcel/RiderProjects/DevLift/DevLiftNew/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew
+build_property.MSBuildProjectDirectory = /home/marcel/RiderProjects/DevLift/DevLiftNew
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Account/Login.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Account/Logout.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Account/Register.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Admin/AddQuestion.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Admin/AddQuestion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vQWRkUXVlc3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Error.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Flashcards/Create.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Flashcards/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmxhc2hjYXJkcy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Flashcards/Index.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Flashcards/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmxhc2hjYXJkcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/IHKQuiz/Frage1.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/IHKQuiz/Frage1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSUhLUXVpei9GcmFnZTEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/IHKQuiz/Frage2.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/IHKQuiz/Frage2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSUhLUXVpei9GcmFnZTIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/IHKQuiz/Frage3.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/IHKQuiz/Frage3.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSUhLUXVpei9GcmFnZTMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/IHKQuiz/Frage4.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/IHKQuiz/Frage4.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSUhLUXVpei9GcmFnZTQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/IHKQuiz/Frage5.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/IHKQuiz/Frage5.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSUhLUXVpei9GcmFnZTUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/IHKQuiz/Frage6.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/IHKQuiz/Frage6.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSUhLUXVpei9GcmFnZTYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Import.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/IHKQuiz/Frage7.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSUhLUXVpei9GcmFnZTcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Import.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW1wb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Index.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Privacy.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/QuizBwl.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/QuizBwl.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUXVpekJ3bC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/QuizNetzwerke.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/QuizNetzwerke.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUXVpek5ldHp3ZXJrZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/ResultPage.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/ResultPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVzdWx0UGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/WelcomPage/WelcomePageProgammieren.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/WelcomPage/WelcomePageProgammieren.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvV2VsY29tUGFnZS9XZWxjb21lUGFnZVByb2dhbW1pZXJlbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/_ViewImports.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/_ViewStart.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/marcelalexandre/RiderProjects/DevLiftNew/DevLiftNew/Pages/Shared/_Layout.cshtml]
+[/home/marcel/RiderProjects/DevLift/DevLiftNew/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-hn0b3ponlv
